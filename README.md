@@ -55,18 +55,22 @@ heroku config:set SLACK_USER_ICON_URL=http://www.example.com/bot-icon.pg
 # Enable scheduler
 heroku addons:create scheduler:standard
 
-# Disable web dyno since this is only for scheduled tasks
-heroku ps:scale web=0
-
 # Deploy app to Heroku
 git push heroku master
-
-# test by targetting isntance deployed to heroku
-heroku run lein run
 
 # Scheduler once per day (configure in browser)
 heroku addons:create scheduler:standard
 heroku addons:open scheduler
+
+# Add job that runs once per day, at 0600 UTC, 0800 EET
+# command ($ = lein run)
+# schedule (Dyno size=free, frequency=daily, next due=0600 UTC)
+
+# Disable web dyno because this is only for scheduled tasks
+heroku ps:scale web=0
+
+# test by targeting an instance deployed to Heroku
+heroku run lein run
 ```
 
 License
