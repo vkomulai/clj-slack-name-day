@@ -1,6 +1,9 @@
 slack-name-day
 ==============
 
+[![Build Status](https://travis-ci.org/vkomulai/clj-slack-name-day.svg?branch=master)](https://travis-ci.org/vkomulai/clj-slack-name-day)
+
+
 - Simple Slack bot sending a greeting message to slack channel on user's [name day](https://en.wikipedia.org/wiki/Name_day)
 - Uses Finnish almanac for name days, source: https://gist.github.com/zokier/1951412
 - Instructions for deploying to Heroku as a Scheduled job
