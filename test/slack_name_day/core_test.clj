@@ -15,11 +15,11 @@
       (with-redefs [clj-time.local/local-now (fn [] (clj-time.core/date-time 2015 12 31))]
         (today) => #"12-31"))
 
-(fact "create-name-day-message works with one user"
-      (create-name-day-message [{:name "Foo"}]) => "Hyvää nimipäivää Foo :cake:")
+(fact "create-name-day-message works with one user, capitalicing name"
+      (create-name-day-message [{:name "foo"}]) => "Hyvää nimipäivää Foo :cake:")
 
-(fact "create-name-day-message works with many users"
-      (create-name-day-message [{:name "Foo"} {:name "Bar"} {:name "Foobar"}]) => "Hyvää nimipäivää Foo, Bar, Foobar :cake:")
+(fact "create-name-day-message works with many users, capitalicing all names"
+      (create-name-day-message [{:name "foo"} {:name "bar"} {:name "foobar"}]) => "Hyvää nimipäivää Foo, Bar, Foobar :cake:")
 
 (fact "having-name-day-on 10-03 returns Raimo"
       (having-name-day-on "10-03") => #{"Raimo"})

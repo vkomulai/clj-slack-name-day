@@ -27,7 +27,7 @@
   (set ((read-finnish-name-days) (keyword day))))
 
 (defn create-name-day-message [slack-users]
-  (str "Hyvää nimipäivää " (str/join ", " (map :name slack-users)) " :cake:"))
+  (str "Hyvää nimipäivää " (str/join ", " (map str/capitalize (map :name slack-users))) " :cake:"))
 
 (defn fetch-slack-users []
   ((usr/list slack-connection) :members))
