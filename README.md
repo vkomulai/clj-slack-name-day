@@ -15,7 +15,7 @@ Running locally
 
 ```sh
 SLACK_TOKEN=your-slacktoken-comes-right-here
-SLACK_CHANNEL=general
+SLACK_CHANNEL=#general
 SLACK_SERNAME=NameDayBot
 SLACK_USER_ICON_URL=http://www.example.com/bot-icon.png
 lein run
@@ -25,7 +25,7 @@ lein run
 
 ```sh
 SLACK_TOKEN=your-slacktoken-comes-right-here
-SLACK_CHANNEL=general
+SLACK_CHANNEL=#general
 SLACK_USERNAME=NameDayBot
 SLACK_USER_ICON_URL=http://www.example.com/bot-icon.png
 lein run 30-01
@@ -51,7 +51,7 @@ heroku create
 
 #Set config vars`
 heroku config:set SLACK_TOKEN=your-slacktoken-comes-right-here
-heroku config:set SLACK_CHANNEL=general
+heroku config:set SLACK_CHANNEL=#general
 heroku config:set SLACK_USERNAME=NameDayBot
 heroku config:set SLACK_USER_ICON_URL=http://www.example.com/bot-icon.pg
 
